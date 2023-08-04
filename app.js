@@ -5,6 +5,8 @@ const helmet = require('helmet')
 const mongoose = require('mongoose')
 const port = process.env.PORT || 40000
 
+const uploadRoute = require('./routes/uploader')
+
 const app = express()
 app.use(cors())
 app.use(helmet())
@@ -19,7 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(error)
 });
 
-
+app.use('/media',uploadRoute)
 
 app.listen(port,(error)=>{
     if(error) throw error
