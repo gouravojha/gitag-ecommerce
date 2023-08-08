@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 const port = process.env.PORT || 40000
 
 const uploadRoute = require('./routes/uploader')
+const sellerRoute = require('./routes/seller')
 
 const app = express()
 app.use(cors())
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 app.use('/media',uploadRoute)
+app.use('/seller',sellerRoute)
 
 app.listen(port,(error)=>{
     if(error) throw error
