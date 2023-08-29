@@ -27,3 +27,5 @@ dist/
 dist-server/
 build/
 out/
+
+z.json

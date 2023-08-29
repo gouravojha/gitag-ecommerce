@@ -7,6 +7,7 @@ const port = process.env.PORT || 40000
 
 const uploadRoute = require('./routes/uploader')
 const sellerRoute = require('./routes/seller')
+const productRoute = require('./routes/products')
 
 const app = express()
 app.use(cors())
@@ -28,6 +29,7 @@ app.get('/',(req,res)=>{
 
 app.use('/media',uploadRoute)
 app.use('/seller',sellerRoute)
+app.use('/product',productRoute)
 
 app.listen(port,(error)=>{
     if(error) throw error
