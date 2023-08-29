@@ -22,6 +22,10 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(error)
 });
 
+app.get('/',(req,res)=>{
+    res.json({status:'Server is Live !!'})
+})
+
 app.use('/media',uploadRoute)
 app.use('/seller',sellerRoute)
 
